@@ -1,0 +1,14 @@
+**/.DS_Store
+canal.block
+pkgid
+sequence
+
+ca
+!ca/*.yaml
+ccbuilder/data
+ccbuilder/*.tar.gz
+ccbuilder/.DS_Store
+orderer/blocks
+orderer/etcdraft
+peer/data
+peer/snapshots
