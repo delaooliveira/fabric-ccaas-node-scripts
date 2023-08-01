@@ -11,7 +11,7 @@ If you are using MacOS and doesn't like to run a VM to be able to use Docker and
 - CouchDB with an user configured. (It is expected to be admin/adminpw. if you choose to use another one, you must change `peer/core.yaml` @ `.ledger.state.couchDBConfig.username` and `.ledger.state.couchDBConfig.password`)
 
 ## Setup:
-- Clonar this repo at `/opt/fabric`. Just run `git clone git@github.com:delaooliveira/fabric-ccaas-node-scripts.git /opt/fabric --depth 1`
+- Clonar this repo at `/opt/fabric`. Just run `git clone https://github.com/delaooliveira/fabric-ccaas-node-scripts.git /opt/fabric --depth 1`
 - Execute:
     - `fabric-ca-server start` from `/opt/fabric/ca`;
     - `./create-crypto-artefacts.sh` and check for any error messages;
