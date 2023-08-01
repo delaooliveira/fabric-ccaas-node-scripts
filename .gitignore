@@ -3,12 +3,23 @@ canal.block
 pkgid
 sequence
 
-ca
-!ca/*.yaml
+ca/Issuer*
+ca/admin
+ca/*.pem
+ca/client
+ca/msp
+ca/orderer
+ca/orgadmin
+ca/peer
+ca/tls
+ca/fabric-ca-server.db
+
 ccbuilder/data
 ccbuilder/*.tar.gz
 ccbuilder/.DS_Store
+
 orderer/blocks
 orderer/etcdraft
+
 peer/data
 peer/snapshots
