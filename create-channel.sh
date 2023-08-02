@@ -1,7 +1,7 @@
 # LOAD ENVS
 . envs.sh
 
-rm canal.block
+rm canal.block 2> /dev/null
 configtxgen -profile Local -outputBlock canal.block -channelID $CHANNEL_NAME
 
 osnadmin channel join --channelID $CHANNEL_NAME \
