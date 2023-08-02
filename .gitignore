@@ -1,7 +1,8 @@
 **/.DS_Store
 canal.block
-pkgid
-sequence
+pkgid*
+sequence*
+envs.sh
 
 ca/Issuer*
 ca/admin

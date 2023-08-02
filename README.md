@@ -12,6 +12,7 @@ If you are using MacOS and doesn't like to run a VM to be able to use Docker and
 
 ## Setup:
 - Clonar this repo at `/opt/fabric`. Just run `git clone https://github.com/delaooliveira/fabric-ccaas-node-scripts.git /opt/fabric --depth 1`
+- Copy the contents of `envs.sh.template` to `envs.sh` and complete the envs
 - Execute:
     - `fabric-ca-server start` from `/opt/fabric/ca`;
     - `./create-crypto-artefacts.sh` and check for any error messages;
