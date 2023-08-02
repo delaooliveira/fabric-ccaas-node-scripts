@@ -3,9 +3,9 @@
 . envs.sh
 
 PACKAGE_ID=$(cat pkgid-$CHAINCODE_NAME)
-SEQUENCE=$(cat sequence-$CHAINCODE_NAME)
+SEQUENCE=$(cat sequence-$CHANNEL_NAME)
 ((SEQUENCE=SEQUENCE+1))
-echo -n $SEQUENCE > sequence-$CHAINCODE_NAME
+echo -n $SEQUENCE > sequence-$CHANNEL_NAME
 
 echo $PACKAGE_ID
 
@@ -24,7 +24,7 @@ FABRIC_CFG_PATH=peer CORE_PEER_MSPCONFIGPATH=../ca/admin/msp peer lifecycle chai
     --version $CHAINCODE_VERSION \
     --package-id "${PACKAGE_ID}" \
     --sequence $SEQUENCE \
-    ${DADOS_PRIVADOS}
+    ${PRIVATE_DATA}
 
 sleep 1
 
@@ -34,7 +34,7 @@ FABRIC_CFG_PATH=peer peer lifecycle chaincode checkcommitreadiness \
     --version $CHAINCODE_VERSION \
     --sequence $SEQUENCE \
     --output json \
-    ${DADOS_PRIVADOS}
+    ${PRIVATE_DATA}
 
 FABRIC_CFG_PATH=peer CORE_PEER_MSPCONFIGPATH=../ca/admin/msp peer lifecycle chaincode commit \
     -o localhost:7050 \
@@ -45,7 +45,7 @@ FABRIC_CFG_PATH=peer CORE_PEER_MSPCONFIGPATH=../ca/admin/msp peer lifecycle chai
     --name ${CHAINCODE_NAME} \
     --version $CHAINCODE_VERSION \
     --sequence $SEQUENCE \
-    ${DADOS_PRIVADOS}
+    ${PRIVATE_DATA}
 
 FABRIC_CFG_PATH=peer peer lifecycle chaincode querycommitted \
     --channelID ${CHANNEL_NAME} \
