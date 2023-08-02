@@ -11,7 +11,7 @@ mkdir -p "$tempdir/src"
 CERT=$(perl -p -e 's/\n/\\n/' /opt/fabric/ca/ca-cert.pem )
 cat > "$tempdir/src/connection.json" <<CONN_EOF
 {
-  "address": "localhost:7100",
+  "address": "localhost:$CHAINCODE_PORT",
   "domain": "localhost",
   "dial_timeout": "10s",
   "tls_required": true,
@@ -36,6 +36,6 @@ tar -C "$tempdir/pkg" -czf "ccbuilder/${CHAINCODE_NAME}.tar.gz" metadata.json co
 # rm -Rf "$tempdir"
 
 PACKAGE_ID=$(FABRIC_CFG_PATH=peer peer lifecycle chaincode calculatepackageid ccbuilder/${CHAINCODE_NAME}.tar.gz)
-echo -n $PACKAGE_ID > pkgid
+echo -n $PACKAGE_ID > pkgid-$CHAINCODE_NAME
 
 echo -n $PACKAGE_ID

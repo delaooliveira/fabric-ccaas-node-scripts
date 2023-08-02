@@ -2,10 +2,10 @@
 
 . envs.sh
 
-PACKAGE_ID=$(cat pkgid)
-SEQUENCE=$(cat sequence)
+PACKAGE_ID=$(cat pkgid-$CHAINCODE_NAME)
+SEQUENCE=$(cat sequence-$CHAINCODE_NAME)
 ((SEQUENCE=SEQUENCE+1))
-echo -n $SEQUENCE > sequence
+echo -n $SEQUENCE > sequence-$CHAINCODE_NAME
 
 echo $PACKAGE_ID
 
